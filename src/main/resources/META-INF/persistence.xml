@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+    version="2.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://xmlns.jcp.org/xml/ns/persistence">
+
+
+    <persistence-unit transaction-type="RESOURCE_LOCAL" name="automovelPU">
+        <validation-mode>AUTO</validation-mode>
+        <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
+        
+        <!-- Implementacao do JPA -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <class>com.jpaprojeto.entity.Automovel</class>
+                
+                
+                
+        <!-- Driver JDBC -->
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3308/auto?useTimezone=true&amp;serverTimezone=UTC" />
+            <property name="javax.persistence.jdbc.user" value="root" />
+            <property name="javax.persistence.jdbc.password" value="root" />
+            
+            <!-- Hibernate -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+            
+            <!-- Hibernate imprimir no console os comandos SQLs -->
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            
+<!--            Para ativar o cache de consultas na nossa aplicação-->
+            <property name="hibernate.cache.use_query_cache" value="true" />
+            <property name="hibernate.cache.region.factory_class"  value="org.hibernate.cache.ehcache.EhCacheRegionFactory" />
+                 
+        </properties>
+
+
+    </persistence-unit>
+</persistence>

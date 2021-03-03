@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title><ui:insert name="pageTitle">Faces Motors</ui:insert></title>
+        <h:outputStylesheet library="css" name="template.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <div id="topo">
+            <ui:insert name="topo">
+                <ui:include src="/WEB-INF/comuns/topo.xhtml"/>
+            </ui:insert>
+
+            <div id="menu">
+                <ui:include src="/WEB-INF/comuns/menu.xhtml"/>
+            </div>
+
+            <div id="body">
+                <ui:insert name="body"/>
+            </div>
+
+            <div id="rodape">
+                <ui:include src="/WEB-INF/comuns/rodape.xhtml"/>
+            </div>
+    </h:body>
+
+<!--            <h:dataTable value="#{automovelBean.automoveis}" var="auto"
+                         rowClasses="table-linha-par,table-linha-impar" border="1">
+                <h:column>
+                    <f:facet name="header">Marca</f:facet>
+                        #{auto.modelo.marca}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Modelo</f:facet>
+                        #{auto.modelo}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Ano FabricaÃ§Ã£o</f:facet>
+                        #{auto.anoFabricacao}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Ano Modelo</f:facet>
+                        #{auto.anoModelo}
+                </h:column>
+
+                <h:commandLink value="Editar" action="editar">
+                    <f:setPropertyActionListener value="#{automovel}"
+                                                 target="#{automovelBean.automovel}"/>
+                </h:commandLink>
+            </h:dataTable>
+
+            <h:commandButton value="Salvar"
+                             action="#{automovelBean.salvar(automovel)}"/>
+
+        </div>
+        </body>-->
+</html>

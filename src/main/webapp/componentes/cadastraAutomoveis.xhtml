@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Cadastro de Automovel</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <div>
+            <h:form>
+                <h:panelGrid columns="2">
+                    Marca: <h:outputText value="#{automovel.modelo.marca}"/>
+                    Modelo: <h:outputText value="#{automovel.modelo}"/>
+                    Ano Fabr.: <h:outputText value="#{automovel.anoFabricacao}"/>
+                    Ano Modelo: <h:outputText value="#{automovel.anoModelo}"/>
+                    Km: <h:outputText value="#{automovel.kilometragem}"/>
+                </h:panelGrid>
+
+                <br/>
+                <h:selectBooleanCheckbox value="#{marcaBean.continuarInserindo}"/>
+                Continuar Inserindo?
+                <br/>
+                <h:commandButton id="botaoSalvar" value="Salvar"
+                                 action="#{automovelBean.salvar(automovel)}">
+                    <f:actionListener type="facesmotors.LoggerActionListener"/>
+                </h:commandButton>
+            </h:form>
+
+            <h:form enctype="multipart/form-data">
+                Imagem: <h:inputFile value="#{autoBean.uploadedFile}"/>
+                <h:commandButton value="Salvar" action="#{automBean.salvar}"/>
+            </h:form>
+
+
+        </div>
+    </h:body>
+</html>

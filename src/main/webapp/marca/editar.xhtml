@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html  xmlns:ui="http://java.sun.com/jsf/facelets"
+       xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:f="http://java.sun.com/jsf/core"
+       xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <h:head>
+        <title>Editar Marca</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>
+
+            <h:panelGrid columns="2">
+                ID: <h:outputText value="#{marcaBean.marca.id}"/>
+                Marca: <h:inputText value="#{marcaBean.marca.nome}" required="true"/>
+            </h:panelGrid>
+
+            <br/>
+            <h:selectBooleanCheckbox value="#{marcaBean.continuarInserindo}"/>
+            Contunuar Inserindo
+            <br/>
+            <h:commandButton value="Salvar" action="#{marcaBean.salvar}"/>
+
+        </h:form>
+    </h:body>
+</html>
