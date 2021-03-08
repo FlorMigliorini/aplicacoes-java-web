@@ -22,7 +22,7 @@
 							<f:selectItem itemLabel="-- Selecione --" noSelectionOption="true"/>
 							<f:selectItems value="#{marcaBean.marcas}" var="marca" itemValue="#{marca}" itemLabel="#{marca.nome}"/>
 						</h:selectOneMenu>
-				Descricao: <h:inputText id="descricao" label="descição" value="#{cc.attrs.modelo.descricao}"/>
+				Descricao: <h:inputText id="descricao" label="descricao" value="#{cc.attrs.modelo.descricao}"/>
 
 			<h:commandButton value="#{cc.attrs.labelBotao}" action="#{cc.attrs.acao}"/>
 			</h:panelGrid>
